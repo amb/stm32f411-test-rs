@@ -9,6 +9,7 @@ edition = "2021"
 embassy-stm32 = { version = "0.1.0", features = [
     "defmt",
     "stm32f411ce",
+    # "stm32f070rb",
     "unstable-pac",
     "memory-x",
     "time-driver-any",
@@ -17,6 +18,7 @@ embassy-stm32 = { version = "0.1.0", features = [
 ] }
 embassy-executor = { version = "0.5.0", features = [
     "task-arena-size-32768",
+    # "task-arena-size-1024",
     "arch-cortex-m",
     "executor-thread",
     "executor-interrupt",
@@ -40,5 +42,11 @@ heapless = { version = "0.8", default-features = false }
 embedded-io = { version = "0.6.0" }
 embedded-io-async = { version = "0.6.1" }
 
+embedded-graphics = "0.8.1"
+ssd1306 = "0.8.4"
+
 [profile.release]
 debug = 2
+# debug = 0
+# lto = true
+# opt-level = "s"
